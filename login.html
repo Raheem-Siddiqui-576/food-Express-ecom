@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FoodExpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="style/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="row g-0">
+                <!-- Left Side - Brand & Features -->
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="login-left">
+                        <a href="index.html" class="brand-logo text-white">
+                            <i class="fas fa-utensils me-2"></i>FoodExpress
+                        </a>
+                        
+                        <h2 class="mt-5 mb-4">Welcome Back!</h2>
+                        <p class="mb-5">Login to access your favorite food, track orders, and enjoy exclusive offers.</p>
+                        
+                        <ul class="features-list">
+                            <li>
+                                <div class="feature-icon">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Fast Delivery</h5>
+                                    <p class="mb-0">30 minutes or less</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon">
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Exclusive Offers</h5>
+                                    <p class="mb-0">Member-only discounts</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Order History</h5>
+                                    <p class="mb-0">Track all your orders</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Login Form -->
+                <div class="col-lg-6">
+                    <div class="login-right">
+                        <a href="index.html" class="brand-logo d-lg-none">
+                            <i class="fas fa-utensils me-2"></i>FoodExpress
+                        </a>
+                        
+                        <h1 class="login-title">Login to Your Account</h1>
+                        <p class="login-subtitle">Enter your credentials to access your account</p>
+                        
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="mb-3 position-relative">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                                <button type="button" class="password-toggle" id="togglePassword">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <a href="#" class="text-decoration-none">Forgot Password?</a>
+                            </div>
+                            <div style="width: 100%; text-align: center;">
+                             <img src="https://res.cloudinary.com/bytesizedpieces/image/upload/v1656084931/article/a-how-to-guide-on-making-an-animated-loading-image-for-a-website/animated_loader_gif_n6b5x0.gif" height="100px" id="loading-gif"     style="display: none;">
+                            
+                            </div>
+                             <button type="submit" class="login-btn" id="login">
+                                <i class="fas fa-sign-in-alt me-2"></i>Login
+                            </button>
+                            
+                            <div class="divider">
+                                <span>Or continue with</span>
+                            </div>
+                            
+                            <div class="social-login">
+                                <button type="button" class="social-btn google" id="google-signin">
+                                    <i class="fab fa-google"></i> Google
+                                </button>
+                            </div>
+                            
+                            <div class="login-footer">
+                                <p>Don't have an account? <a href="index.html">Sign up here</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-app-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-auth-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-database-compat.js"></script> 
+    <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyAJlbkv-9STLbkF4jAZ4L0MwnTI61HOg9U",
+    authDomain: "foodexpress-15197.firebaseapp.com",
+    databaseURL: "https://foodexpress-15197-default-rtdb.firebaseio.com",
+    projectId: "foodexpress-15197",
+    storageBucket: "foodexpress-15197.firebasestorage.app",
+    messagingSenderId: "481432298833",
+    appId: "1:481432298833:web:44b4be3ee84a454b125f70"
+  };
+
+   firebase.initializeApp(firebaseConfig);
+</script>
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+    <script src="js/login.js"></script>
+</body>
+</html>

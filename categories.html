@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Categories - FoodExpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/categories.css">
+     <link rel="stylesheet" href="style/chat.css"> 
+     <link rel="stylesheet" href="style/loading-animation.css">
+     <link rel="stylesheet" href="style/icon.css">
+     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+</head>
+<body>
+      <!-- complaint image icon -->
+     <div id="complaint-icon-con"> 
+        <a href="complaint.html"><img src="assests/complaint.png" id="complaint-img"></a>
+        
+     </div>
+    <!--------chat section-->
+    <div id="chat-box">
+           <div id="chat-upper">
+        <span><i class="fas fa-utensils me-2"></i>FoodExpress Support</span>
+        <i class="fas fa-times" style="text-align: right;" id="exitIcon"></i>
+        
+    </div>
+    <div>
+      <div class="chat-con" id="chat-body">
+          
+     </div>
+    <div id="chat-footer">
+        <input type="text" name="" id="chat-inp">
+        <button id="chatBtn">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+    </div>
+    </div>
+    <button class="chat-btn" id="chatButt">
+    <i class="fas fa-comment-dots"></i>
+   </button>
+    <!-------->
+   
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-utensils me-2"></i>FoodExpress
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                  
+                    <li class="nav-item">
+                        <a class="nav-link active" href="categories.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="all-products.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="order-history.html">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="cart.html" class="position-relative me-4 text-dark">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span class="cart-badge" id="cart-item-length"> 10</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-2"></i><span id="profile-name"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="user-profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="orders.html">My Orders</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><button class="dropdown-item" id="logout">Logout</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="page-title">Browse Our Menu</h1>
+                    <p class="page-subtitle">Discover delicious food from 12+ categories. Freshly prepared and delivered to your doorstep.</p>
+                </div>
+                <div class="col-lg-4 text-end">
+                    <div class="search-box">
+                        <div class="input-group">
+                            <input type="text" class="form-control search-input" placeholder="Search for food..." id="search">
+                            <button class="btn search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-container">
+        <div class="container">
+            <div class="row" id="catRow">
+                <!-- Category -->
+   
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalCategory">0</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalProducts">0</div>
+                        <div class="stat-label">Food Items</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number">30min</div>
+                        <div class="stat-label">Avg. Delivery</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>FoodExpress</h5>
+                    <p class="mt-3">Delivering happiness through delicious food since 2020. We connect you with the best restaurants in your city.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links mt-3">
+                        <a href="categories.html">Home</a>
+                        <a href="product.html">Menu</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Careers</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Legal</h5>
+                    <div class="footer-links mt-3">
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Refund Policy</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Us</h5>
+                    <div class="mt-3">
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 123 Food Street, Mumbai</p>
+                        <p><i class="fas fa-phone me-2"></i> +91 9876543210</p>
+                        <p><i class="fas fa-envelope me-2"></i> support@foodexpress.com</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6>Download Our App</h6>
+                        <div class="d-flex mt-2">
+                            <a href="#" class="btn btn-light btn-sm me-2">
+                                <i class="fab fa-google-play me-1"></i> Play Store
+                            </a>
+                            <a href="#" class="btn btn-light btn-sm">
+                                <i class="fab fa-app-store me-1"></i> App Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 FoodExpress. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+     <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-app-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-auth-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-database-compat.js"></script> 
+    <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyAJlbkv-9STLbkF4jAZ4L0MwnTI61HOg9U",
+    authDomain: "foodexpress-15197.firebaseapp.com",
+    databaseURL: "https://foodexpress-15197-default-rtdb.firebaseio.com",
+    projectId: "foodexpress-15197",
+    storageBucket: "foodexpress-15197.firebasestorage.app",
+    messagingSenderId: "481432298833",
+    appId: "1:481432298833:web:44b4be3ee84a454b125f70"
+  };
+
+   firebase.initializeApp(firebaseConfig);
+</script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/redirect.js"></script>
+    <script src="js/category.js"></script>
+</body>
+</html>

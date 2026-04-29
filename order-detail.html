@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodExpress - Menu Cards</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/order-detail.css">
+    <link rel="stylesheet" href="style/chat.css">
+    <link rel="stylesheet" href="style/loading-animation.css">    
+    <link rel="stylesheet" href="style/icon.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+</head>
+<body>
+     <!-- complaint image icon -->
+     <div id="complaint-icon-con"> 
+        <a href="complaint.html"><img src="assests/complaint.png" id="complaint-img"></a>
+        
+     </div>
+     <!--------chat section-->
+    <div id="chat-box">
+           <div id="chat-upper">
+        <span><i class="fas fa-utensils me-2"></i>FoodExpress Support</span>
+        <i class="fas fa-times" style="text-align: right;" id="exitIcon"></i>
+        
+    </div>
+    <div>
+      <div class="chat-con" id="chat-body">
+          
+     </div>
+    <div id="chat-footer">
+        <input type="text" name="" id="chat-inp">
+        <button id="chatBtn">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+    </div>
+    </div>
+    <button class="chat-btn" id="chatButt">
+    <i class="fas fa-comment-dots"></i>
+   </button>
+    <!-------->
+   
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-utensils me-2"></i>FoodExpress
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="all-products.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active-class" href="order-history.html">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="cart.html" class="position-relative me-4 text-dark">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span class="cart-badge" id="cart-item-length"></span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-2"></i><span id="profile-name"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="user-profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="orders.html">My Orders</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><button class="dropdown-item" id="logout">logout</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title text-center">Orders Detail</h1>
+            <p class="mb-0 text-center">View and manage all your past orders</p>
+            <div style="width: 60%; text-align: justify; margin: 15px auto;">
+            <h2>Date:- <span id="date-show"></span></h2>
+            <h2>Time:- <span id="timeShow"></span></h2>
+            <h3>OrderId:- <span id="orderId"></span></h3>
+            <h3>tax 5%</h3>
+            <h3>Total Amount RS <span id="total-amount"></span></h3>
+           </div>
+            </div>
+    </section>
+    <!-- Cards Container -->
+    <div class="container cards-container">
+        <div class="row g-4" id="cart-sec">
+           
+        </div>
+    </div>
+      <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-app-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-auth-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-database-compat.js"></script> 
+    <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyAJlbkv-9STLbkF4jAZ4L0MwnTI61HOg9U",
+    authDomain: "foodexpress-15197.firebaseapp.com",
+    databaseURL: "https://foodexpress-15197-default-rtdb.firebaseio.com",
+    projectId: "foodexpress-15197",
+    storageBucket: "foodexpress-15197.firebasestorage.app",
+    messagingSenderId: "481432298833",
+    appId: "1:481432298833:web:44b4be3ee84a454b125f70"
+  };
+
+   firebase.initializeApp(firebaseConfig);
+</script>
+    <!-- Bootstrap JS (optional for some components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/redirect.js"></script>
+    <script src="js/order-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+body{
+background:#f3f3f3;
+font-family: 'Segoe UI', sans-serif;
+}
+/* Top Gradient Header */
+
+.profile-header{
+background: linear-gradient(120deg,#ff7e5f,#6dd5ed);
+padding:60px 0;
+border-bottom-left-radius:40px;
+border-bottom-right-radius:40px;
+color:white;
+}
+
+.profile-header h2{
+font-weight:700;
+}
+
+/* Profile Card */
+
+.profile-card{
+background:white;
+margin-top:-40px;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Profile Image */
+
+.profile-img{
+width:160px;
+height:160px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid #f3f3f3;
+}
+
+/* Form */
+
+.form-control{
+border-radius:8px;
+padding:10px;
+}
+
+label{
+font-weight:500;
+}
+
+/* Button */
+
+.save-btn{
+background:#ff7e5f;
+border:none;
+padding:12px;
+border-radius:8px;
+color:white;
+font-weight:600;
+}
+
+.save-btn:hover{
+background:#ff5a3c;
+}
+

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - FoodExpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style/checkout.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-utensils me-2"></i>FoodExpress
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="cart.html" class="position-relative me-4 text-dark">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span class="cart-badge">3</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-2"></i>John
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="orders.html">My Orders</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Container -->
+    <section class="checkout-container">
+        <div class="container">
+            <!-- Progress Steps -->
+            <div class="progress-steps">
+                <div class="step completed">
+                    <div class="step-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="step-label">Cart</div>
+                </div>
+                
+                <div class="step active">
+                    <div class="step-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="step-label">Checkout</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="step-label">Payment</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="step-label">Complete</div>
+                </div>
+            </div>
+            
+            <div class="checkout-content">
+                <!-- Checkout Form -->
+                <div class="checkout-form">
+                    <!-- Delivery Address -->
+                    <div class="form-section">
+                        <div class="section-title">
+                            <div>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Delivery Address
+                            </div>
+                            <button class="edit-btn">Edit</button>
+                        </div>
+                        
+                        <div class="address-card selected" id="address1">
+                            <div class="address-type">Home</div>
+                            <div class="address-details">
+                                <p><strong>John Doe</strong></p>
+                                <p>123 Main Street, Apt 4B</p>
+                                <p>Mumbai, Maharashtra 400001</p>
+                                <p>Phone: +91 9876543210</p>
+                            </div>
+                        </div>
+                        
+                        <div class="address-card" id="address2">
+                            <div class="address-type">Office</div>
+                            <div class="address-details">
+                                <p><strong>John Doe</strong></p>
+                                <p>456 Business Park, Floor 8</p>
+                                <p>Andheri East, Mumbai 400093</p>
+                                <p>Phone: +91 9876543210</p>
+                            </div>
+                        </div>
+                        
+                        <button class="add-address-btn" id="addAddressBtn">
+                            <i class="fas fa-plus me-2"></i> Add New Address
+                        </button>
+                    </div>
+                    
+                    <!-- Delivery Time -->
+                    <div class="form-section">
+                        <div class="section-title">
+                            <i class="fas fa-clock"></i>
+                            Delivery Time
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="deliveryTime" id="asap" checked>
+                                    <label class="form-check-label" for="asap">
+                                        <strong>ASAP</strong><br>
+                                        <small class="text-muted">Deliver in 30-40 minutes</small>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="deliveryTime" id="schedule">
+                                    <label class="form-check-label" for="schedule">
+                                        <strong>Schedule</strong><br>
+                                        <small class="text-muted">Choose delivery time</small>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3" id="scheduleTime" style="display: none;">
+                            <input type="datetime-local" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Method -->
+                    <div class="form-section">
+                        <div class="section-title">
+                            <i class="fas fa-credit-card"></i>
+                            Payment Method
+                        </div>
+                        
+                        <div class="payment-method selected" id="cashPayment">
+                            <div class="payment-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div class="payment-details">
+                                <div class="payment-title">Cash on Delivery</div>
+                                <div class="payment-desc">Pay when you receive your order</div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method" id="cardPayment">
+                            <div class="payment-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="payment-details">
+                                <div class="payment-title">Credit/Debit Card</div>
+                                <div class="payment-desc">Pay securely with your card</div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method" id="upiPayment">
+                            <div class="payment-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="payment-details">
+                                <div class="payment-title">UPI</div>
+                                <div class="payment-desc">Pay using UPI apps</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card Details Form (Hidden by default) -->
+                        <div class="mt-4" id="cardDetails" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <label class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Expiry Date</label>
+                                    <input type="text" class="form-control" placeholder="MM/YY">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">CVV</label>
+                                    <input type="text" class="form-control" placeholder="123">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label class="form-label">Card Holder Name</label>
+                                    <input type="text" class="form-control" placeholder="John Doe">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3 class="section-title mb-4">Order Summary</h3>
+                    
+                    <div class="order-items">
+                        <!-- Order Item 1 -->
+                        <div class="order-item">
+                            <div class="item-info">
+                                <img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                     class="item-image" alt="Margherita Pizza">
+                                <div>
+                                    <div class="item-name">Margherita Pizza</div>
+                                    <div class="text-muted">Qty: 2</div>
+                                </div>
+                            </div>
+                            <div class="item-price">₹598</div>
+                        </div>
+                        
+                        <!-- Order Item 2 -->
+                        <div class="order-item">
+                            <div class="item-info">
+                                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                     class="item-image" alt="Chicken Burger">
+                                <div>
+                                    <div class="item-name">Chicken Burger</div>
+                                    <div class="text-muted">Qty: 1</div>
+                                </div>
+                            </div>
+                            <div class="item-price">₹199</div>
+                        </div>
+                        
+                        <!-- Order Item 3 -->
+                        <div class="order-item">
+                            <div class="item-info">
+                                <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                     class="item-image" alt="Coke 500ml">
+                                <div>
+                                    <div class="item-name">Coca Cola 500ml</div>
+                                    <div class="text-muted">Qty: 1</div>
+                                </div>
+                            </div>
+                            <div class="item-price">₹50</div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span class="total-label">Subtotal</span>
+                            <span class="total-value">₹847</span>
+                        </div>
+                        <div class="total-row">
+                            <span class="total-label">Delivery Charge</span>
+                            <span class="total-value">₹40</span>
+                        </div>
+                        <div class="total-row">
+                            <span class="total-label">Tax (5%)</span>
+                            <span class="total-value">₹42</span>
+                        </div>
+                        <div class="total-row">
+                            <span class="total-label">Discount</span>
+                            <span class="total-value text-success">-₹0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grand-total">
+                        <div class="total-row">
+                            <span class="total-label">Total Amount</span>
+                            <span class="total-value">₹929</span>
+                        </div>
+                    </div>
+                    
+                    <button class="place-order-btn" id="placeOrderBtn">
+                        <i class="fas fa-lock me-2"></i> Place Order
+                    </button>
+                    
+                    <div class="back-to-cart">
+                        <a href="cart.html">
+                            <i class="fas fa-arrow-left me-2"></i> Back to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>FoodExpress</h5>
+                    <p class="mt-3">Delivering happiness through delicious food since 2020. We connect you with the best restaurants in your city.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links mt-3">
+                        <a href="index.html">Home</a>
+                        <a href="categories.html">Menu</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Careers</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Legal</h5>
+                    <div class="footer-links mt-3">
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Refund Policy</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Us</h5>
+                    <div class="mt-3">
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 123 Food Street, Mumbai</p>
+                        <p><i class="fas fa-phone me-2"></i> +91 9876543210</p>
+                        <p><i class="fas fa-envelope me-2"></i> support@foodexpress.com</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6>Download Our App</h6>
+                        <div class="d-flex mt-2">
+                            <a href="#" class="btn btn-light btn-sm me-2">
+                                <i class="fab fa-google-play me-1"></i> Play Store
+                            </a>
+                            <a href="#" class="btn btn-light btn-sm">
+                                <i class="fab fa-app-store me-1"></i> App Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 FoodExpress. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Address selection
+        document.querySelectorAll('.address-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.address-card').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+        
+        // Delivery time toggle
+        document.getElementById('schedule').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('scheduleTime').style.display = 'block';
+            }
+        });
+        
+        document.getElementById('asap').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('scheduleTime').style.display = 'none';
+            }
+        });
+        
+        // Payment method selection
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', function() {
+                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                // Show/hide card details
+                if (this.id === 'cardPayment') {
+                    document.getElementById('cardDetails').style.display = 'block';
+                } else {
+                    document.getElementById('cardDetails').style.display = 'none';
+                }
+            });
+        });
+        
+        // Add new address
+        document.getElementById('addAddressBtn').addEventListener('click', function() {
+            alert('Add new address functionality will be implemented');
+            // Here you would typically show a modal form to add new address
+        });
+        
+        // Place order
+        document.getElementById('placeOrderBtn').addEventListener('click', function() {
+            const selectedAddress = document.querySelector('.address-card.selected');
+            const selectedPayment = document.querySelector('.payment-method.selected');
+            
+            if (!selectedAddress) {
+                alert('Please select a delivery address');
+                return;
+            }
+            
+            if (!selectedPayment) {
+                alert('Please select a payment method');
+                return;
+            }
+            
+            // Show confirmation
+            const confirmOrder = confirm('Are you sure you want to place this order?');
+            if (confirmOrder) {
+                alert('Order placed successfully! You will be redirected to order tracking.');
+                // Here you would typically redirect to order tracking page
+                window.location.href = 'order-tracking.html';
+            }
+        });
+    </script>
+</body>
+</html>

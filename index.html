@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - FoodExpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style/style.css">
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-card">
+            <div class="signup-header">
+                <a href="index.html" class="brand-logo">
+                    <i class="fas fa-utensils me-2"></i>FoodExpress
+                </a>
+                <h2 class="signup-title">Create Your Account</h2>
+                <p class="signup-subtitle">Join us for delicious food and exclusive offers</p>
+            </div>
+            
+            <div class="signup-body">
+                <!-- Progress Steps -->
+                <div class="progress-steps">
+                    <div class="step active" id="step1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Personal Info</div>
+                    </div>
+                    <div class="step" id="step2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Account Password</div>
+                    </div>
+                    <div class="step" id="step3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Address</div>
+                    </div>
+                    <div class="step" id="step4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Complete</div>
+                    </div>
+                </div>
+                
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" id="formStep1">
+                    <h4 class="mb-4">Personal Information</h4>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="userName1" placeholder="Enter first name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="userName2" placeholder="Enter last name" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email address" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="number" class="form-control" id="cell-no" placeholder="Enter phone number" required>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button type="button" class="btn-next ms-auto nextStep" >Next <i class="fas fa-arrow-right ms-2"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Account Details -->
+                <div class="form-step" id="formStep2">
+             
+                    <h4 class="mb-4">Account Details</h4>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Create password" required>
+                        <div class="password-strength">
+                            <div class="strength-bar" id="strengthBar"></div>
+                        </div>
+                        <small class="text-muted">Use 8+ characters with letters, numbers & symbols</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="strongpassword" placeholder="Confirm password" required>
+                    </div>
+
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            I agree to the <a href="#" class="text-primary">Terms & Conditions</a> and <a href="#" class="text-primary">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn-prev previous"><i class="fas fa-arrow-left me-2"></i> Previous</button>
+                        <button type="button" class="btn-next nextStep">Next <i class="fas fa-arrow-right ms-2"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Address -->
+                <div class="form-step" id="formStep3">
+                    <!----profile image---->
+                    <img style="border: 1px solid rgb(197, 204, 209); height: 200px; width: 200px; border-radius: 100%;display: none ; margin: 0px auto;" id="pro-pic">
+                    <!----------->
+                    <div style="border: 1px solid rgb(197, 204, 209); height: 100px; position: relative;" id="image-con">
+                    <input type="file" id="image" style="display: none;">
+                    <h2 style="color: rgb(197, 204, 209); font-family:'Poppins',sans-serif; position: absolute; top: 15px; left: 10px;">Upload your Profile</h2>
+                        
+                </div>
+                  
+                    <h4 class="mt-2 mb-1">Delivery Address</h4>
+                    <div class="mb-3">
+                         <textarea class="form-control" rows="3" id="Address" placeholder="Enter complete address"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" id="city" placeholder="Enter city">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">State</label>
+                                <input type="text" class="form-control" id="state" placeholder="Enter state">
+                            </div>
+                        </div>
+                    </div>
+                    <!---------
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Pincode</label>
+                                <input type="text" class="form-control" placeholder="Enter pincode">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Landmark (Optional)</label>
+                                <input type="text" class="form-control" placeholder="Enter landmark">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="saveAddress">
+                        <label class="form-check-label" for="saveAddress">
+                            Save this as default delivery address
+                        </label>
+                    </div>
+
+                    -->
+                    <div class="btn-group">
+                        <button type="button" class="btn-prev previous" ><i class="fas fa-arrow-left me-2"></i> Previous</button>
+                         <img src="https://res.cloudinary.com/bytesizedpieces/image/upload/v1656084931/article/a-how-to-guide-on-making-an-animated-loading-image-for-a-website/animated_loader_gif_n6b5x0.gif" height="70px" id="loading-gif" style="text-align: center; display: none;">
+                        <button type="button" class="btn-next" id="complete">Complete <i class="fas fa-check ms-2"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Complete -->
+                <div class="form-step" id="formStep4">
+                    <div class="text-center py-5">
+                        <div class="mb-4">
+                            <i class="fas fa-check-circle" style="font-size: 5rem; color: var(--secondary);"></i>
+                        </div>
+                        <h3 class="mb-3">Account Created Successfully!</h3>
+                        <p class="mb-4">Welcome to FoodExpress. Your account has been created successfully.</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="index.html" class="btn btn-primary">Go to Homepage</a>
+                            <a href="login.html" class="btn btn-outline-primary">Login Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="login-link">
+                    <p>Already have an account? <a href="login.html">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+     <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-app-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-auth-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-database-compat.js"></script> 
+    <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyAJlbkv-9STLbkF4jAZ4L0MwnTI61HOg9U",
+    authDomain: "foodexpress-15197.firebaseapp.com",
+    databaseURL: "https://foodexpress-15197-default-rtdb.firebaseio.com",
+    projectId: "foodexpress-15197",
+    storageBucket: "foodexpress-15197.firebasestorage.app",
+    messagingSenderId: "481432298833",
+    appId: "1:481432298833:web:44b4be3ee84a454b125f70"
+  };
+
+   firebase.initializeApp(firebaseConfig);
+</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

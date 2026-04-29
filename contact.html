@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FoodExpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/contact.css">
+    <link rel="stylesheet" href="style/chat.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="style/loading-animation.css">
+     <link rel="stylesheet" href="style/icon.css">
+     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+</head>
+<body>
+     <!-- complaint image icon -->
+     <div id="complaint-icon-con"> 
+        <a href="complaint.html"><img src="assests/complaint.png" id="complaint-img"></a>
+        
+     </div>
+<!--------chat section-->
+    <div id="chat-box">
+           <div id="chat-upper">
+        <span><i class="fas fa-utensils me-2"></i>FoodExpress Support</span>
+        <i class="fas fa-times" style="text-align: right;" id="exitIcon"></i>
+        
+    </div>
+    <div>
+      <div class="chat-con" id="chat-body">
+          
+     </div>
+    <div id="chat-footer">
+        <input type="text" name="" id="chat-inp">
+        <button id="chatBtn">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+    </div>
+    </div>
+    <button class="chat-btn" id="chatButt">
+    <i class="fas fa-comment-dots"></i>
+   </button>
+    <!-------->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-utensils me-2"></i>FoodExpress
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="all-products.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="order-history.html">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="cart.html" class="position-relative me-4 text-dark">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span class="cart-badge" id="cart-item-length">0</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-2"></i><span id="profile-name"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="user-profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="orders.html">My Orders</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><button class="dropdown-item" id="logout">Logout</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="page-title">Contact Us</h1>
+                    <p class="page-subtitle">Have questions? We'd love to hear from you. Get in touch with our team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Visit Us</h4>
+                        <p>Hyderabad , latifabad</p>
+                        <p>c1</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Call Us</h4>
+                        <p>Customer Support: +91 0000000000</p>
+                        <p>Restaurant Partners:  +91 0000000000</p>
+                        <p>Corporate: +91 98765 43212</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email Us</h4>
+                        <p>Support: support@foodexpress.com</p>
+                        <p>owner: raheemsiddiqui576@gmail.com</p>
+                        <p>Careers: careers@foodexpress.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h3 class="form-title">Send Us a Message</h3>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" id="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email" id="email" required>
+                                </div>
+                            </div>
+                            <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required>
+                            <select class="form-select" id="subject">
+                                <option selected disabled>Select Subject</option>
+                                <option value="Order Issue">Order Issue</option>
+                                <option value="Delivery Question">Delivery Question</option>
+                                <option value="Restaurant Partnership">Restaurant Partnership</option>
+                                <option value="Feedback & Suggestions">Feedback & Suggestions</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <textarea class="form-control" rows="5" placeholder="Your Message" id="message" required></textarea>
+                            <button type="submit" class="submit-btn" id="submitButt">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="contact-info" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                        <h4>Business Hours</h4>
+                        <p><strong>Monday - Friday:</strong> 9:00 AM - 9:00 PM</p>
+                        <p><strong>Saturday - Sunday:</strong> 10:00 AM - 8:00 PM</p>
+                        <p><strong>Delivery Hours:</strong> 24/7 (Selected Restaurants)</p>
+                        <hr class="my-4">
+                        <h4>Emergency Support</h4>
+                        <p>For urgent issues, please call our 24/7 helpline:</p>
+                        <p><strong><i class="fas fa-phone me-2"></i> +91 0000000000 </strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+     <div class="container">
+         <div class="map-section" id="map-sec-loading"></div>
+     </div>
+        <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>How do I track my order?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            You can track your order in real-time from the "My Orders" section after logging into your account. You'll also receive SMS and email updates.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>What is your refund policy?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            If your order is incorrect or damaged, we offer full refunds within 24 hours. Contact our support team with your order details.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>How can I become a delivery partner?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Visit our "Careers" page and fill out the delivery partner application form. We'll get back to you within 3-5 business days.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>Do you offer bulk orders for events?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We offer special discounts for bulk orders. Please email us at catering@foodexpress.com with your requirements.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>FoodExpress</h5>
+                    <p class="mt-3">Delivering happiness through delicious food since 2020.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links mt-3">
+                        <a href="categories.html">Home</a>
+                        <a href="all-products.html">Menu</a>
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Legal</h5>
+                    <div class="footer-links mt-3">
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Refund Policy</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Us</h5>
+                    <div class="mt-3">
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 123 Food Street, Mumbai</p>
+                        <p><i class="fas fa-phone me-2"></i> +91 0000000000</p>
+                        <p><i class="fas fa-envelope me-2"></i> support@foodexpress.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 FoodExpress. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+     <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-app-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-auth-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-database-compat.js"></script> 
+    <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyAJlbkv-9STLbkF4jAZ4L0MwnTI61HOg9U",
+    authDomain: "foodexpress-15197.firebaseapp.com",
+    databaseURL: "https://foodexpress-15197-default-rtdb.firebaseio.com",
+    projectId: "foodexpress-15197",
+    storageBucket: "foodexpress-15197.firebasestorage.app",
+    messagingSenderId: "481432298833",
+    appId: "1:481432298833:web:44b4be3ee84a454b125f70"
+  };
+
+   firebase.initializeApp(firebaseConfig);
+</script>
+      <!------toastify-------->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="js/chat.js"></script>
+    <script src="js/redirect.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

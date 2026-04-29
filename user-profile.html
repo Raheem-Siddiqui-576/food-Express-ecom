@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FoodExpress Profile</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style/chat.css">
+<link rel="stylesheet" href="style/icon.css">
+<link rel="stylesheet" href="style/user-profle.css">
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+</head>
+<body>
+  <!-- complaint image icon -->
+     <div id="complaint-icon-con"> 
+        <a href="complaint.html"><img src="assests/complaint.png" id="complaint-img"></a>
+        
+     </div>
+ <!--------chat section-->
+    <div id="chat-box">
+           <div id="chat-upper">
+        <span><i class="fas fa-utensils me-2"></i>FoodExpress Support</span>
+        <i class="fas fa-times" style="text-align: right;" id="exitIcon"></i>
+        
+    </div>
+    <div>
+      <div class="chat-con" id="chat-body">
+          
+     </div>
+    <div id="chat-footer">
+        <input type="text" name="" id="chat-inp">
+        <button id="chatBtn">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+    </div>
+    </div>
+    <button class="chat-btn" id="chatButt">
+    <i class="fas fa-comment-dots"></i>
+   </button>
+    <!-------->
+   
+<!-- Header -->
+
+<div class="profile-header text-center">
+
+<h2>My Profile</h2>
+<p>Manage your personal information</p>
+
+</div>
+
+
+<!-- Profile Section -->
+
+<div class="container">
+
+<div class="profile-card mb-5" id="main">
+
+<div class="row align-items-center">
+<div class="col-md-4 text-center mb-4">
+
+<img  class="profile-img" id="pro-img">
+
+<h5 class="mt-3" id="userName"></h5>
+<p class="text-muted">FoodExpress User</p>
+
+</div>
+
+
+<!-- Right Form -->
+
+<div class="col-md-8">
+
+<form>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<label>First Name</label>
+<input type="text" class="form-control" placeholder="First Name" id="first-name" readonly>
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Last Name</label>
+<input type="text" class="form-control" placeholder="Last Name" id="last-name" readonly>
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Email</label>
+<input type="email" class="form-control" placeholder="Email Address" id="email" readonly>
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Phone Number</label>
+<input type="text" class="form-control" placeholder="Phone Number" id="cell-no" readonly>
+</div>
+
+<div class="col-12 mb-3">
+<label>Address</label>
+<input type="text" class="form-control" placeholder="Street Address" id="address" readonly>
+</div>
+
+<div class="col-md-6 mb-3">
+<label>City</label>
+<input type="text" class="form-control" placeholder="City" id="city" readonly>
+</div>
+
+<div class="col-md-6 mb-3">
+<label>State</label>
+<input type="text" class="form-control" placeholder="State" id="state" readonly>
+</div>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- signin google -->
+<div class="profile-card mb-5" id="sigin-google">
+
+<div class="row align-items-center">
+
+<div class="col-md-4 text-center mb-4">
+
+<img  class="profile-img" id="pro-img-2">
+
+<h5 class="mt-3" id="userName"></h5>
+<p class="text-muted">FoodExpress User</p>
+
+</div>
+
+
+<!-- Right Form -->
+
+<div class="col-md-8">
+
+<form>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<label>Full Name</label>
+<input type="text" class="form-control" placeholder="First Name" id="fullName" readonly>
+</div>
+<div class="col-md-6 mb-3">
+<label>Email</label>
+<input type="email" class="form-control" placeholder="Email Address" id="email2" readonly>
+</div>
+<div class="col-md-6 mb-3">
+<label>user Id</label>
+<input type="text" class="form-control" placeholder="State" id="uid" readonly>
+</div>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-app-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-auth-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-database-compat.js"></script> 
+    <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyAJlbkv-9STLbkF4jAZ4L0MwnTI61HOg9U",
+    authDomain: "foodexpress-15197.firebaseapp.com",
+    databaseURL: "https://foodexpress-15197-default-rtdb.firebaseio.com",
+    projectId: "foodexpress-15197",
+    storageBucket: "foodexpress-15197.firebasestorage.app",
+    messagingSenderId: "481432298833",
+    appId: "1:481432298833:web:44b4be3ee84a454b125f70"
+  };
+
+   firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="js/profile.js"></script>
+<script src="js/redirect.js"></script>
+
+<script src="js/chat.js"></script>
+</body>
+</html> 

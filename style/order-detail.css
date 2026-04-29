@@ -1,0 +1,195 @@
+     @import url(order-history.css);   
+     * {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            
+        }
+        
+        /* Container for cards */
+        .cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Card Styling */
+        .food-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 2rem;
+            height: 100%;
+            border: 1px solid #f0f0f0;
+            position: relative;
+        }
+        
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Card Image */
+        .card-img-wrapper {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .food-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        /* Category Badge on Image */
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 107, 53, 0.9);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+            backdrop-filter: blur(5px);
+        }
+        
+        /* Favorite Icon */
+        .favorite-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 2;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .favorite-icon i {
+            color: #FF6B35;
+            font-size: 1.1rem;
+        }
+        
+        /* Card Body */
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        /* Restaurant Name and Rating */
+        .restaurant-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .restaurant-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #333;
+            margin: 0;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            background: #28a745;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            gap: 4px;
+        }
+        
+        .rating i {
+            font-size: 0.7rem;
+        }
+        
+        /* Cuisine Type */
+        .cuisine-type {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Items Count and Price */
+        .items-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .items-count i, .price i {
+            color: #FF6B35;
+            margin-right: 5px;
+        }
+        
+        .price {
+            font-weight: 600;
+            color: #FF6B35;
+        }
+        
+        /* Delivery Time */
+        .delivery-time {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .delivery-time i {
+            color: #FF6B35;
+        }
+        
+        /* Browse Button */
+        .browse-btn {
+            background-color: #FF6B35;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 0.7rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            width: 100%;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .browse-btn:hover {
+            background-color: #e85a2a;
+            transform: scale(1.02);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .food-card {
+                margin-bottom: 1.5rem;
+            }
+        }

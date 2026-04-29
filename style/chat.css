@@ -1,0 +1,123 @@
+#chatButt{
+    border: 1px solid #FF6B35;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    font-size: 25px;
+    background-color: #FF6B35;
+    color: white;
+    position: fixed;
+    top: 87%;
+    left: 90%;
+    z-index: 1000;
+    
+}
+#chat-box{
+ height: 500px;
+ width: 400px;
+ border-radius: 20px;
+ position: fixed;
+ top: 2%;
+ left: 65%;
+ z-index: 5000;   
+ box-shadow: 3px 3px 20px rgb(27, 27, 27);
+ display: none;
+}
+#chat-upper{
+    border: 1px solid #fc875d;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    color: white;
+    background-color: #fc875d;
+}
+#chat-body{
+    border: 1px solid rgba(168, 168, 168, 0.877);
+    height: 350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: white;
+    padding: 4px 10px;
+}
+.chat-div{
+    border: 1px solid white;
+    background-color: #FF7A45;
+    color: white;
+    max-width: 100%;
+    border-radius: 15px 15px 15px 0px;
+    display: inline-block;
+    padding: 5px 5px;
+         
+}
+.chat-div-inner{
+    border: 3px solid #f1f1f1;
+      background: #f1f1f1;
+    color: black;
+    font-weight: 500;
+    max-width: 100%;
+    border-radius: 15px 15px 0px 15px;
+    display: inline-block;
+    padding: 5px 5px;
+    }
+
+.chat-head{
+    font-size: 15px;
+    padding-top: 3px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: left;
+}
+.chat-reciver{
+    font-size: 15px;
+    padding-top: 3px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: left;
+    color: black;
+    font-weight: 400;
+}
+.time{
+    font-size: 10px;
+    text-align: right;
+}
+#chat-footer{
+    border: 1px solid white;
+    border-top: 1px solid white;
+     background: #f1f1f1;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#chat-inp{
+    height: 40px;
+    width: 230px;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+#chat-inp{
+    border: 1px solid rgb(177, 177, 177);
+}
+#chat-inp:active{
+    border: 1px solid rgb(177, 177, 177);
+}
+#chatBtn{
+    border: 1px solid #fc875d;
+    height: 50px;
+    width: 50px;
+    font-size: 15px;
+    border-radius: 100%;
+    background-color: #fc875d;
+    color: white;
+}
