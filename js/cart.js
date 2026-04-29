@@ -241,26 +241,26 @@ cardPlace.addEventListener("click",async function(){
  
    
     }
-//     function emailSend(data,order){
-//          data.to_email="raheemsiddiqui576@gmail.com"
-//         order.forEach(item=>{
-//          item.multiplication=Number(item.proPrice)*Number(item.quantity)
-//          }) 
-//         data.totalPriceBeforTax=totalPrice
+    function emailSend(data,order){
+         data.to_email="raheemsiddiqui576@gmail.com"
+        order.forEach(item=>{
+         item.multiplication=Number(item.proPrice)*Number(item.quantity)
+         }) 
+        data.totalPriceBeforTax=totalPrice
         
-//         emailjs.init({
-//      publicKey: '0bu8EHHSNtYik8K7L'
-//     })
-//     emailjs.send('service_x06xjko', 'template_32ci0gl', data).then(
-//   (response) => {
-//     console.log('SUCCESS!', response.status, response.text);
-//   },
-//   (error) => {
-//     console.log('FAILED...', error);
-//   },
-// ); 
+        emailjs.init({
+     publicKey: '0bu8EHHSNtYik8K7L'
+    })
+    emailjs.send('service_x06xjko', 'template_32ci0gl', data).then(
+  (response) => {
+    console.log('SUCCESS!', response.status, response.text);
+  },
+  (error) => {
+    console.log('FAILED...', error);
+  },
+); 
 
-// }
+}
 function checkOrderCart(){
     let getCartLength=localStorage.getItem("TOTALCART")
     if(getCartLength>0){
