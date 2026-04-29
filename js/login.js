@@ -46,13 +46,6 @@ login.addEventListener("click" ,async function(){
   
   login.style.display="none"
   loadingGif.style.display="inline"
- if((email.value=="admin@gmail.com"&& password.value=="callbackfunction123")||(email.value=="admin@gmail.com"||password.value=="callbackfunction123")){
-    window.location.href="../admin-side/categories.html"
-    localStorage.setItem("OWNER-DETAIL",email.value)
-    return
-  }
-
-   
   firebase.auth().signInWithEmailAndPassword(email.value, password.value)
   .then(async(userCredential) => {
     // Signed in
