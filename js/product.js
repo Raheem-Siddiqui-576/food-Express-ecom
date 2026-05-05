@@ -5,13 +5,9 @@ let priceRange=document.getElementById("priceRange")
 let foodtypeFilter=document.querySelectorAll("#foodtype-filter input")
 let checkVal;
 const queryString= window.location.search
-console.log(queryString)
 const searchParam =new URLSearchParams(queryString)
-console.log(searchParam)
 let categoryName = searchParam.get("catName")
-console.log(categoryName)
 let categoryKey = searchParam.get("catKey")
-console.log(categoryKey)
 function profileData(){
   let profileName=document.getElementById("profile-name")
   let fetch =JSON.parse(localStorage.getItem("USER-DETAIL"))
@@ -103,8 +99,7 @@ getProducts()
 document.addEventListener("click",(e)=>{
             if(e.target.closest(".add-to-cart-btn")){
                 checkVal=e.target.closest(".add-to-cart-btn")
-                console.log(e.target.closest(".add-to-cart-btn"))
-                let btn=e.target.closest(".add-to-cart-btn")
+             let btn=e.target.closest(".add-to-cart-btn")
                 addCart(
                     btn.dataset.cat,
                     btn.dataset.name,
@@ -137,11 +132,9 @@ value-=1
  }
     }
     function addCart(catName,proName,proDescription,proImage,foodType,proPrice,proDis){
-        console.log("aa")
     let cartItem=""
         let parentElement =checkVal.parentElement
      let val=parentElement.querySelector(".count-val").innerText
-     console.log(val)
      let obj={
         id:Date.now(),
         proName,
@@ -153,7 +146,6 @@ value-=1
         proPrice,
         proDis,
      }
-     console.log(obj)
      let cart= JSON.parse(localStorage.getItem("CART"))|| []
      let matchCart=cart.find(item =>{ 
       return item.proName==obj.proName && item.catName==catName
@@ -181,7 +173,6 @@ value-=1
      cart.push(obj)
      localStorage.setItem("CART",JSON.stringify(cart))    
     }
-    console.log(cart.length)
     cartItem=cart.length||0
     localStorage.setItem("TOTALCART",cartItem)
      showTotalCart()

@@ -52,7 +52,6 @@ let complaintStates=async()=>{
 complaintStates()
 complaintShow=(array)=>{
     let filtered=array.filter(item=>{
-        console.log(item)
        return item.email==getData.email
     })
     if(filtered.length>0){

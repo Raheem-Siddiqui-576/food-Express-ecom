@@ -91,7 +91,7 @@ let minutes=date.getMinutes()
 let am_pm=hours>12?"PM":"AM"
 hours=hours>12 ? hours%12:hours
 minutes=minutes<10 ?"0"+minutes :minutes
-console.log(minutes)
+
  currentTime=hours+":"+minutes+" "+am_pm
 minutes= minutes="0" ? minutes+"0":minutes
 //
@@ -123,7 +123,7 @@ else{
 }
 } 
 async function createChatBranch(data){
-    console.log(data)
+ 
 if(data){
 let roomId= await firebase.database().ref("chat").child(data.chatListKey).push().getKey()
 

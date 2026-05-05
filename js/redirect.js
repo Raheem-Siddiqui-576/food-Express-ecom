@@ -12,4 +12,3 @@ logout.addEventListener("click",function(){
 }) 
 }
 checkAuth()
-    

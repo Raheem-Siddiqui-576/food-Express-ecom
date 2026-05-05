@@ -109,14 +109,12 @@ else if(count==3){
 }
 else{
 }
-console.log(count)
 
 
 }
 });
 Array.from(previous).forEach(butt=>{
   butt.addEventListener("click", function(){
-    console.log(butt)
     previousFun()  
   })  
 })
@@ -144,7 +142,6 @@ else if(count==1){
  }
  
 
-console.log(count)
 }
 
 async function signIn(){

@@ -15,7 +15,6 @@ profileData()
      function showTotalCart(){
       let fetch=localStorage.getItem("TOTALCART")
         cartItemLength.innerText=fetch||0
-        console.log(cartItemLength) 
 }
 showTotalCart()
     async function statistics(array){
@@ -47,7 +46,7 @@ catRow.innerHTML+=`
     <div class="card border-0 shadow-sm mt-5 " style="max-width: 400px; border-radius: 20px; overflow: hidden;">
         
         <!-- Card Image -->
-        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" 
+        <img src=${item.proImage} 
              class="card-img-top" 
              alt="Pizza"
              style="height: 200px; object-fit: cover;">
@@ -107,7 +106,7 @@ await firebase.database().ref("products").get()
 
  })
  let check=Object.keys(proCount)
- console.log(check)
+
  
 })
  .catch((e)=>{
@@ -133,7 +132,6 @@ if(data.val()==null){
  let array=Object.values(data.val())
 
  array.forEach(cat=>{
-    
      proCountShow = proCount[cat.categoryName] || 0
    catRow.innerHTML+=`
     <div class="col-lg-4 col-md-6">
@@ -141,7 +139,7 @@ if(data.val()==null){
     <div class="card border-0 shadow-sm mt-5 " style="max-width: 400px; border-radius: 20px; overflow: hidden;">
         
         <!-- Card Image -->
-        <img src="${cat.proImage}" 
+        <img src='${cat.proImage}'
              class="card-img-top" 
              alt="Pizza"
              style="height: 200px; object-fit: cover;">

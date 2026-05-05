@@ -55,9 +55,7 @@ login.addEventListener("click" ,async function(){
    .then(async(snapShot)=>{
     
     let data=snapShot.val()
-    
-    console.log(data)
-    let obj={
+     let obj={
      firstName:data.firstName,
      lastName:data.lastName,
      userUid:user.uid,
